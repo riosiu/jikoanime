@@ -1,6 +1,6 @@
 <script lang="ts">
   export let data: any = [];
-  console.log(data);
+  // console.log(data);
 </script>
 
 <nav class="flex justify-between p-5 bg-slate-800 text-white">

@@ -1,5 +1,7 @@
 import { onMount } from "svelte";
 import { env } from "$env/dynamic/private";
+import type { PageServerLoad } from "./$types";
+import { API_JIKAN_URL } from "$env/static/private";
 
 type DataAnime = {
     top: {
@@ -17,14 +19,16 @@ type DataAnime = {
 
 export async function load({ fetch }) {
     try {
-        const res = await fetch(`${env.API_JIKAN_URL}/top/anime`);
-        const data = await res.json();
+        const response = await fetch(`${env.API_JIKAN_URL}/top/anime?limit=5`);
+        const data = await response.json();
         // console.log(data);
         return data
     } catch (error) {
         console.error(error);
     }
 }
+
+
 
 
 
