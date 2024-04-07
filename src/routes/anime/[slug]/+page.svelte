@@ -12,8 +12,8 @@
   <section class="bg-zinc-900 p-4 mx-44 rounded-md">
     <div class="flex justify-between items-center">
       <div class="flex flex-col gap-3">
-        <span class="text-6xl font-bold">{data.title}</span>
-        <div class="flex flex-row items-center gap-4 text-slate-800">
+        <span class="text-4xl font-bold">{data.title}</span>
+        <div class="flex flex-row items-center gap-4 text-slate-200">
           <span>{data.status} {data.type}</span>
           <span>{data.year}</span>
           <div class="flex flex-row gap-2">
