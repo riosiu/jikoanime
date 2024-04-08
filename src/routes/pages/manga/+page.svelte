@@ -31,6 +31,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Manga Here - Jiko Anime</title>
+</svelte:head>
+
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
   <div
@@ -56,14 +60,14 @@
 <main>
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
-      <span class="font-bold text-4xl mt-4"> Anime</span>
+      <span class="font-bold text-4xl mt-4"> Manga</span>
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#each data.data as item}
         <div
           class="card bg-cyan-950 rounded-lg text-white flex justify-center flex-col items-center gap-3"
         >
-          <a href={`/pages/anime/${item.mal_id}`}>
+          <a href={`/pages/manga/${item.mal_id}`}>
             <img
               src={item.images.webp.image_url}
               alt={item.title}

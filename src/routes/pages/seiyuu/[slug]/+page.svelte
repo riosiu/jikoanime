@@ -43,9 +43,12 @@
   const totalPages = Math.ceil(data.voices.length / itemsPerPage);
 </script>
 
+<svelte:head>
+  <title>{data.name} as People and Seiyuu - Jiko Anime</title>
+</svelte:head>
+
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
-  <a href="/">Page</a>
 </nav>
 
 <main class="my-10 flex-col flex gap-8">

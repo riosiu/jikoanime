@@ -1,17 +1,13 @@
+<!-- index.svelte -->
 <script lang="ts">
   import { PUBLIC_API_JIKAN_URL } from "$env/static/public";
   import { CgSearch } from "svelte-icons-pack/cg";
+  import ModalComponnent from "../../../components/ModalAnimeComponnent.svelte";
   import ModalMangaComponnent from "../../../components/ModalMangaComponnent.svelte";
-  import ModalSeiyuuComponnent from "../../../components/ModalSeiyuuComponnent.svelte";
 
   export let data: any = [];
   console.log(data);
 
-  const options = {
-    year: "numeric" as string,
-    month: "long" as string,
-    day: "numeric" as string,
-  };
   let showModal = false;
 
   function toggleModal() {
@@ -20,10 +16,10 @@
 
   let search = "";
   let resultSearch: any = [];
-  const getAnime = async () => {
+  const getManga = async () => {
     try {
       const response = await fetch(
-        `${PUBLIC_API_JIKAN_URL}/anime?q=${search}&limit=3`
+        `${PUBLIC_API_JIKAN_URL}/manga?q=${search}&limit=3`
       );
       const data = await response.json();
       resultSearch = data.data;
@@ -32,44 +28,22 @@
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    getAnime();
+    getManga();
   };
 </script>
 
 <svelte:head>
-  <title>People and Seiyuu Here - Jiko Anime</title>
+  <title>Top Seiyuu and People Here - Jiko Anime</title>
 </svelte:head>
 
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
-  <!-- <div
-    class="text-white rounded-full btn bg-primary flex flex-row gap-1 items-center"
-  >
-    <button class="top-0 right-0 m-2 p-2" on:click={toggleModal}>
-      Search Seiyuu
-    </button>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 16 16"
-      fill="currentColor"
-      class="w-8 h-8 opacity-70"
-      ><path
-        fill-rule="evenodd"
-        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-        clip-rule="evenodd"
-      /></svg
-    >
-  </div> -->
 </nav>
 
 <main>
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
-      <span class="font-bold text-4xl mt-4"> People and Seiyuu</span>
-      <a
-        class="font-bold text-2xl mt-4 hover:font-bold"
-        href="/pages/top-people">Top Seiyuu or People Here</a
-      >
+      <span class="font-bold text-4xl mt-4">Top Rank Seiyuu and People</span>
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#each data.data as item}
@@ -86,23 +60,16 @@
             />
           </a>
           <div class=" card-body flex flex-col items-center gap-[1px] m-2">
-            <span>{item.mal_id}</span>
+            <span>{item.favorites}</span>
             <span class="text-xl text-center text-gray-200">{item.name}</span>
             <span class="text-center text-lg">{item.given_name}</span>
-            <!-- <span class="text-md"
-              >{new Date(item.birthday).toLocaleDateString("en-US")}</span
-            > -->
-            <span
-              >{new Intl.DateTimeFormat("en-US").format(
-                new Date(item.birthday)
-              )}</span
-            >
-            <span class="text-md">Favorites ⭐:{item.favorites}</span>
+            <span class="text-md">{item.year}</span>
           </div>
+          <!-- <span>{item.studios.name}</span> -->
         </div>
       {/each}
     </article>
   </section>
 </main>
 
-<ModalSeiyuuComponnent {showModal} {search} {resultSearch} />
+<ModalMangaComponnent {showModal} {search} {resultSearch} />

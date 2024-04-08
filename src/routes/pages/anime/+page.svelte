@@ -32,6 +32,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Anime Here - Jiko Anime</title>
+</svelte:head>
+
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
   <div

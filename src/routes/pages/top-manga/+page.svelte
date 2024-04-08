@@ -32,6 +32,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Top Manga Here - Jiko Anime</title>
+</svelte:head>
+
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
   <div
@@ -57,7 +61,7 @@
 <main>
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
-      <span class="font-bold text-4xl mt-4">Top Rank Anime</span>
+      <span class="font-bold text-4xl mt-4">Top Rank Manga</span>
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#each data.data as item}

@@ -3,6 +3,11 @@
   console.log(data);
 </script>
 
+<svelte:head>
+  <title>{data.title} - Jiko Anime</title>
+  <meta name="description" content={data.synopsis} />
+</svelte:head>
+
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
 </nav>

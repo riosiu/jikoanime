@@ -31,6 +31,11 @@
   <a href="/" class="text-xl">Jiko Anime</a>
 </nav>
 
+<svelte:head>
+  <title>{anime.title} - Jiko Anime</title>
+  <meta name="description" content={anime.background} />
+</svelte:head>
+
 <main class="my-10 flex flex-col gap-4">
   <section class="bg-zinc-900 p-4 mx-44 rounded-md">
     <div class="flex justify-between items-center">
