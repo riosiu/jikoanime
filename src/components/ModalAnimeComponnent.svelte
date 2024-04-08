@@ -74,7 +74,7 @@
                   />
                 </svg>
               </label>
-              <button on:click={handleSearch} class="btn">Cari Anime</button>
+              <button on:click={handleSearch} class="btn">Find Anime</button>
             </div>
           </div>
           <!-- Tampilkan hasil pencarian -->

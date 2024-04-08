@@ -16,12 +16,12 @@
     // Lakukan permintaan pencarian
     try {
       const response = await fetch(
-        `${PUBLIC_API_JIKAN_URL}/manga?q=${search}&limit=3`
+        `${PUBLIC_API_JIKAN_URL}/people?q=${search}&limit=3`
       );
       const data = await response.json();
       resultSearch = data.data;
     } catch (error) {
-      console.error("Error fetching manga:", error);
+      console.error("Error fetching anime:", error);
     }
   };
 </script>
@@ -38,7 +38,7 @@
         <div
           class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t"
         >
-          <h3 class="text-3xl font-semibold">Find Manga</h3>
+          <h3 class="text-3xl font-semibold">Find Seiyuu</h3>
           <button
             class="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
             on:click={toggleModal}
@@ -74,7 +74,7 @@
                   />
                 </svg>
               </label>
-              <button on:click={handleSearch} class="btn">Find Manga</button>
+              <button on:click={handleSearch} class="btn">Find Seiyuu</button>
             </div>
           </div>
           <!-- Tampilkan hasil pencarian -->
@@ -82,15 +82,15 @@
             <div class="flex flex-col justify-center items-center gap-4">
               <span class="text-xl text-cyan-950">Hasil Pencarian:</span>
               <ul class="flex flex-col gap-8">
-                {#each resultSearch as manga}
-                  <a href={`/pages/manga/${manga.mal_id}`}>
+                {#each resultSearch as anime}
+                  <a href={`/pages/anime/${anime.mal_id}`}>
                     <div class="flex gap-4 hover:bg-neutral-700 p-3 rounded-lg">
                       <img
-                        src={manga.images.webp.image_url}
+                        src={anime.images.webp.image_url}
                         class="w-24 rounded-xl h-24"
                         alt=""
                       />
-                      <span>{manga.title}</span>
+                      <span>{anime.title}</span>
                     </div>
                   </a>
                 {/each}

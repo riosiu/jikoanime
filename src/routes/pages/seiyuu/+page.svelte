@@ -2,6 +2,7 @@
   import { PUBLIC_API_JIKAN_URL } from "$env/static/public";
   import { CgSearch } from "svelte-icons-pack/cg";
   import ModalMangaComponnent from "../../../components/ModalMangaComponnent.svelte";
+  import ModalSeiyuuComponnent from "../../../components/ModalSeiyuuComponnent.svelte";
 
   export let data: any = [];
   console.log(data);
@@ -37,11 +38,11 @@
 
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
-  <div
+  <!-- <div
     class="text-white rounded-full btn bg-primary flex flex-row gap-1 items-center"
   >
     <button class="top-0 right-0 m-2 p-2" on:click={toggleModal}>
-      Search Manga
+      Search Seiyuu
     </button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +55,7 @@
         clip-rule="evenodd"
       /></svg
     >
-  </div>
+  </div> -->
 </nav>
 
 <main>
@@ -96,4 +97,4 @@
   </section>
 </main>
 
-<ModalMangaComponnent {showModal} {search} {resultSearch} />
+<ModalSeiyuuComponnent {showModal} {search} {resultSearch} />
