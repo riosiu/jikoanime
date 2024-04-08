@@ -17,7 +17,14 @@
 </script>
 
 <nav class="flex justify-between p-5 text-white">
-  <a href="/" class="text-xl">Jiko Anime</a>
+  <div class="flex flex-row gap-12">
+    <a href="/" class="text-xl">Jiko Anime</a>
+    <div class="flex-row flex gap-10">
+      <a href="/pages/anime" class="text-xl">Anime</a>
+      <a href="/pages/manga" class="text-xl">Manga</a>
+      <a href="/pages/seiyyu" class="text-xl">Seiyu</a>
+    </div>
+  </div>
   <a target="_blank" href="https://rioxiu.my.id" class="text-xl">About Me</a>
 </nav>
 
@@ -25,14 +32,18 @@
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
       <span class="font-bold text-4xl mt-4">Top Rank Anime</span>
-      <a href="/top-anime" class="font-semibold text-xl">View more</a>
+      <a
+        href="/pages/top-anime"
+        class="font-semibold text-xl hover:text-decoration hover:font-bold"
+        >View more</a
+      >
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#each data.data as item}
         <div
           class="bg-cyan-950 rounded-lg text-white flex justify-center flex-col items-center gap-3"
         >
-          <a href={`/anime/${item.mal_id}`}>
+          <a href={`/pages/anime/${item.mal_id}`}>
             <img
               src={item.images.webp.image_url}
               alt={item.title}
@@ -57,7 +68,11 @@
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
       <span class="font-bold text-4xl mt-4">Top Rank Manga</span>
-      <a href={"/top-manga"} class="font-semibold text-xl">View more</a>
+      <a
+        href={"/pages/top-manga"}
+        class="font-semibold text-xl hover:text-decoration hover:font-bold"
+        >View more</a
+      >
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#await getManga() then data_manga}
@@ -65,7 +80,7 @@
           <div
             class="bg-cyan-950 rounded-lg text-white flex justify-center flex-col items-center gap-3"
           >
-            <a href={`/manga/${item.mal_id}`}>
+            <a href={`/pages/manga/${item.mal_id}`}>
               <img
                 src={item.images.webp.image_url}
                 alt={item.title}

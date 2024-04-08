@@ -2,8 +2,8 @@
 <script lang="ts">
   import { PUBLIC_API_JIKAN_URL } from "$env/static/public";
   import { CgSearch } from "svelte-icons-pack/cg";
-  import ModalComponnent from "../../components/ModalAnimeComponnent.svelte";
-  import ModalMangaComponnent from "../../components/ModalMangaComponnent.svelte";
+  import ModalComponnent from "../../../components/ModalAnimeComponnent.svelte";
+  import ModalAnimeComponnent from "../../../components/ModalAnimeComponnent.svelte";
 
   export let data: any = [];
   console.log(data);
@@ -16,10 +16,10 @@
 
   let search = "";
   let resultSearch: any = [];
-  const getManga = async () => {
+  const getAnime = async () => {
     try {
       const response = await fetch(
-        `${PUBLIC_API_JIKAN_URL}/manga?q=${search}&limit=3`
+        `${PUBLIC_API_JIKAN_URL}/anime?q=${search}&limit=3`
       );
       const data = await response.json();
       resultSearch = data.data;
@@ -28,7 +28,7 @@
 
   const handleSearch = (e: any) => {
     e.preventDefault();
-    getManga();
+    getAnime();
   };
 </script>
 
@@ -38,7 +38,7 @@
     class="text-white rounded-full btn bg-primary flex flex-row gap-1 items-center"
   >
     <button class="top-0 right-0 m-2 p-2" on:click={toggleModal}>
-      Search Manga
+      Search Anime
     </button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@
         <div
           class="card bg-cyan-950 rounded-lg text-white flex justify-center flex-col items-center gap-3"
         >
-          <a href={`/manga/${item.mal_id}`}>
+          <a href={`/pages/anime/${item.mal_id}`}>
             <img
               src={item.images.webp.image_url}
               alt={item.title}
@@ -87,4 +87,4 @@
   </section>
 </main>
 
-<ModalMangaComponnent {showModal} {search} {resultSearch} />
+<ModalAnimeComponnent {showModal} {search} {resultSearch} />

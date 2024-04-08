@@ -2,8 +2,8 @@
 <script lang="ts">
   import { PUBLIC_API_JIKAN_URL } from "$env/static/public";
   import { CgSearch } from "svelte-icons-pack/cg";
-  import ModalComponnent from "../../components/ModalAnimeComponnent.svelte";
-  import ModalAnimeComponnent from "../../components/ModalAnimeComponnent.svelte";
+  import ModalComponnent from "../../../components/ModalAnimeComponnent.svelte";
+  import ModalAnimeComponnent from "../../../components/ModalAnimeComponnent.svelte";
 
   export let data: any = [];
   console.log(data);
@@ -57,14 +57,14 @@
 <main>
   <section class="mx-10 bg-slate-950 p-4 rounded-xl">
     <div class="flex justify-between items-center">
-      <span class="font-bold text-4xl mt-4">Top Rank Anime</span>
+      <span class="font-bold text-4xl mt-4"> Anime</span>
     </div>
     <article class="grid grid-cols-5 gap-6 my-10">
       {#each data.data as item}
         <div
           class="card bg-cyan-950 rounded-lg text-white flex justify-center flex-col items-center gap-3"
         >
-          <a href={`/anime/${item.mal_id}`}>
+          <a href={`/pages/anime/${item.mal_id}`}>
             <img
               src={item.images.webp.image_url}
               alt={item.title}
@@ -80,7 +80,6 @@
             <span class="text-md">{item.year}</span>
             <span class="text-md">Skor ⭐:{item.score}</span>
           </div>
-          <!-- <span>{item.studios.name}</span> -->
         </div>
       {/each}
     </article>

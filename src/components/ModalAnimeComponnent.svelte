@@ -83,7 +83,7 @@
               <span class="text-xl text-cyan-950">Hasil Pencarian:</span>
               <ul class="flex flex-col gap-8">
                 {#each resultSearch as anime}
-                  <a href={`/anime/${anime.mal_id}`}>
+                  <a href={`/pages/anime/${anime.mal_id}`}>
                     <div class="flex gap-4 hover:bg-neutral-700 p-3 rounded-lg">
                       <img
                         src={anime.images.webp.image_url}
