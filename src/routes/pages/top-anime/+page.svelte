@@ -6,7 +6,7 @@
   import ModalAnimeComponnent from "../../../components/ModalAnimeComponnent.svelte";
 
   export let data: any = [];
-  console.log(data);
+  // console.log(data);
 
   let showModal = false;
 

@@ -5,7 +5,7 @@
   import ModalSeiyuuComponnent from "../../../components/ModalSeiyuuComponnent.svelte";
 
   export let data: any = [];
-  console.log(data);
+  //   console.log(data);
 
   const options = {
     year: "numeric" as string,

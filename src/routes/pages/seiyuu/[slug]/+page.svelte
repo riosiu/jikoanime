@@ -3,7 +3,7 @@
   import { writable } from "svelte/store";
 
   export let data: any = [];
-  console.log(data);
+  // console.log(data);
 
   //
 
