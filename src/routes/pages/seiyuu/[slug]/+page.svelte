@@ -74,7 +74,7 @@
           >
         </div>
         <div class="flex flex-col items-center">
-          <label class="text-slate-700" for="">Voices as Seiyyu</label>
+          <label class="text-slate-700" for="">Voices as Seiyuu</label>
           <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
             >{data.voices.length}</span
           >

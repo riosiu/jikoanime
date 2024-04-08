@@ -79,10 +79,11 @@
       <img
         src={anime.images.webp.large_image_url !== null || undefined
           ? anime.images.webp.large_image_url
-          : `/not-found.png`}
+          : `/not-found.jpg`}
         alt={anime.title}
         class=" object-cover rounded-t-lg mt-4"
       />
+      <!-- <img src={`/not-found.jpg`} alt="" /> -->
       <iframe
         class="rounded-t-xl"
         width="1120"
@@ -165,7 +166,8 @@
               <a href={streaming.url} target="_blank">
                 <img
                   class="rounded-lg"
-                  src={`/${streaming.name.toLowerCase()}.png`}
+                  src={`/${streaming.name.toLowerCase()}.png` ||
+                    "/not-found.jpg"}
                   width="100"
                   alt="img"
                 />
@@ -207,7 +209,7 @@
                   <div class="flex flex-col gap-1 items-end">
                     <a
                       class="hover:font-bold hover:text-cyan-950"
-                      href={`/pages/seiyyu/${voice_actors.person.mal_id}`}
+                      href={`/pages/seiyuu/${voice_actors.person.mal_id}`}
                     >
                       <span class="text-md">{voice_actors.person.name}</span></a
                     >

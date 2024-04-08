@@ -43,9 +43,9 @@
           >
         </div>
         <div class="flex flex-col items-center">
-          <label for="" class="text-slate-700">Total Episodes</label>
+          <label for="" class="text-slate-700">Total Chapter</label>
           <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
-            >{data.episodes}</span
+            >{data.chapters || ""}</span
           >
         </div>
       </div>

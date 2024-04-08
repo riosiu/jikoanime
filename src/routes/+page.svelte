@@ -22,7 +22,7 @@
     <div class="flex-row flex gap-10">
       <a href="/pages/anime" class="text-xl">Anime</a>
       <a href="/pages/manga" class="text-xl">Manga</a>
-      <a href="/pages/seiyyu" class="text-xl">Seiyu</a>
+      <a href="/pages/seiyuu" class="text-xl">Seiyuu</a>
     </div>
   </div>
   <a target="_blank" href="https://rioxiu.my.id" class="text-xl">About Me</a>
