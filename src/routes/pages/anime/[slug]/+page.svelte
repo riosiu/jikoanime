@@ -77,7 +77,9 @@
     </div>
     <article class="flex flex-row p-3 gap-4">
       <img
-        src={anime.images.webp.large_image_url}
+        src={anime.images.webp.large_image_url !== null || undefined
+          ? anime.images.webp.large_image_url
+          : `/not-found.png`}
         alt={anime.title}
         class=" object-cover rounded-t-lg mt-4"
       />

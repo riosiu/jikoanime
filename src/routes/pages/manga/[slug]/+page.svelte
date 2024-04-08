@@ -5,7 +5,6 @@
 
 <nav class="flex justify-between p-5 text-white">
   <a href="/" class="text-xl">Jiko Anime</a>
-  <a href="/">Page</a>
 </nav>
 
 <main class="my-10">
