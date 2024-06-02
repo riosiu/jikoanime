@@ -4,11 +4,11 @@
 
 <body class="w-full min-h-screen">
   <nav
-    class="flex items-center justify-between p-5 text-white border-b-2 border-cyan-950"
+    class="flex flex-row items-center justify-between p-5 text-white border-b-2 border-cyan-950"
   >
-    <div class="flex flex-row">
-      <a href="/" class="text-xl phone:text-xs tablet:text-base">Jiko Anime</a>
-      <div class="flex flex-row gap-4">
+    <a href="/" class="text-xl phone:text-xs tablet:text-base">Jiko Anime</a>
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-row justify-center gap-4">
         <a href="/pages/anime" class="text-xl phone:text-xs tablet:text-base"
           >Anime</a
         >

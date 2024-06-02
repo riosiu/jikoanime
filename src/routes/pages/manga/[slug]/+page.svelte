@@ -13,8 +13,8 @@
 </nav>
 
 <main class="my-10">
-  <section class="bg-zinc-900 p-4 mx-44 rounded-md">
-    <div class="flex justify-between items-center">
+  <section class="p-4 rounded-md bg-zinc-900 mx-44">
+    <div class="flex items-center justify-between">
       <div class="flex flex-col gap-3">
         <span class="text-6xl font-bold">{data.title}</span>
         <div class="flex flex-row items-center gap-4 text-slate-800">
@@ -31,33 +31,33 @@
       <div class="flex gap-4">
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Popularity</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{data.popularity}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Rank</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{data.rank}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Score</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >⭐{data.score}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label for="" class="text-slate-700">Total Chapter</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{data.chapters || ""}</span
           >
         </div>
       </div>
     </div>
-    <div class="my-10 flex flex-row gap-4">
+    <div class="flex flex-row gap-4 my-10">
       <img class="rounded-md" src={data.images.webp.large_image_url} alt="" />
-      <div class="flex gap-4 flex-col">
+      <div class="flex flex-col gap-4">
         <div class="flex flex-col">
           <span class="text-2xl">Title</span>
           <span class="">{data.title_english}</span>
@@ -67,7 +67,7 @@
         <div class="flex gap-4">
           {#each data.themes as themes}
             <div>
-              <span class="bg-slate-800 rounded-lg p-2">{themes.name}</span>
+              <span class="p-2 rounded-lg bg-slate-800">{themes.name}</span>
             </div>
           {/each}
         </div>

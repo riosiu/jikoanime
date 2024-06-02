@@ -4,6 +4,7 @@
   export let data: any = [];
 
   const anime = data.data;
+  console.log("anime", data);
 
   //get character
 
