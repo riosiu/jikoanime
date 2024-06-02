@@ -36,9 +36,9 @@
   <meta name="description" content={anime.background} />
 </svelte:head>
 
-<main class="my-10 flex flex-col gap-4">
-  <section class="bg-zinc-900 p-4 mx-44 rounded-md">
-    <div class="flex justify-between items-center">
+<main class="flex flex-col gap-4 my-10">
+  <section class="p-4 rounded-md bg-zinc-900 mx-44">
+    <div class="flex items-center justify-between">
       <div class="flex flex-col gap-3">
         <a href={anime.url} target="_blank" class="text-4xl font-bold"
           >{anime.title}</a
@@ -56,39 +56,38 @@
       <div class="flex gap-4 mr-4">
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Popularity</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{anime.popularity}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Rank</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{anime.rank}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label class="text-slate-700" for="">Score</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >⭐ {anime.score}</span
           >
         </div>
         <div class="flex flex-col items-center">
           <label for="" class="text-slate-700">Total Episodes</label>
-          <span class="hover:bg-slate-950 p-4 text-2xl rounded-lg"
+          <span class="p-4 text-2xl rounded-lg hover:bg-slate-950"
             >{anime.episodes}</span
           >
         </div>
       </div>
     </div>
-    <article class="flex flex-row p-3 gap-4">
+    <article class="flex flex-row gap-4 p-3">
       <img
         src={anime.images.webp.large_image_url !== null || undefined
           ? anime.images.webp.large_image_url
           : `/not-found.jpg`}
         alt={anime.title}
-        class=" object-cover rounded-t-lg mt-4"
+        class="object-cover mt-4 rounded-t-lg"
       />
-      <!-- <img src={`/not-found.jpg`} alt="" /> -->
       <iframe
         class="rounded-t-xl"
         width="1120"
@@ -96,16 +95,16 @@
         src={anime.trailer.embed_url}
       ></iframe>
     </article>
-    <article class="mt-10 flex flex-row gap-4">
+    <article class="flex flex-row gap-4 mt-10">
       <div class="w-1/2">
         <span
           >Title : {anime.title}
           {anime.title_japanese}
           {anime.title_english}</span
         >
-        <hr class="bg-black my-2" />
+        <hr class="my-2 bg-black" />
         <span>Source: {anime.source}</span>
-        <hr class="bg-black my-2" />
+        <hr class="my-2 bg-black" />
         {#each anime.studios as studios}
           <span
             >Studios : <span class="text-cyan-900">{studios.name}</span></span
@@ -114,21 +113,21 @@
         <br />
         <br />
         <span class="text-lg font-bold">Synopsis</span>
-        <hr class="bg-black my-2" />
+        <hr class="my-2 bg-black" />
         <span class="">{anime.synopsis}</span>
         <br />
         <br />
         <span class="text-lg font-bold">Background</span>
-        <hr class="bg-black my-2" />
+        <hr class="my-2 bg-black" />
         <span>{anime.background}</span>
 
         <br />
         <br />
         <span class="text-lg font-bold">Relations</span>
-        <hr class="bg-black my-2" />
-        <div class="flex gap-3 flex-col my-4">
+        <hr class="my-2 bg-black" />
+        <div class="flex flex-col gap-3 my-4">
           <!-- {#each anime.relations as relations}
-            <div class="flex gap-2 flex-row">
+            <div class="flex flex-row gap-2">
               <span>{relations.relation}:</span>
               {#each relations.entry as entry}
                 <div>
@@ -145,7 +144,7 @@
             {#each anime.relations as relations}
               <tr class="border">
                 <td class="text-lg">{relations.relation}:</td>
-                <td class="flex gap-2 flex-col border">
+                <td class="flex flex-col gap-2 border">
                   {#each relations.entry as entry}
                     <div>
                       <a
@@ -162,10 +161,10 @@
         </div>
       </div>
       <div class="flex flex-col w-1/2 mx-4">
-        <span class="text-orange-700 text-center font-bold text-xl"
+        <span class="text-xl font-bold text-center text-orange-700"
           >Streaming</span
         >
-        <div class="grid grid-cols-4 my-4 gap-4">
+        <div class="grid grid-cols-4 gap-4 my-4">
           {#each anime.streaming as streaming}
             <div class="flex flex-col items-center gap-1">
               <a href={streaming.url} target="_blank">
@@ -185,7 +184,7 @@
     </article>
   </section>
 
-  <section class="bg-zinc-900 p-4 mx-44 rounded-md">
+  <section class="p-4 rounded-md bg-zinc-900 mx-44">
     <span class="text-3xl font-semibold text-cyan-900"> Character!</span>
     <div class="my-4">
       {#await getCharacter() then character}
@@ -211,7 +210,7 @@
                     class="w-24 h-24 rounded-xl"
                     alt=""
                   />
-                  <div class="flex flex-col gap-1 items-end">
+                  <div class="flex flex-col items-end gap-1">
                     <a
                       class="hover:font-bold hover:text-cyan-950"
                       href={`/pages/seiyuu/${voice_actors.person.mal_id}`}

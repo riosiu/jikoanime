@@ -2,6 +2,7 @@ import { onMount } from "svelte";
 import { env } from "$env/dynamic/private";
 import type { PageServerLoad } from "./$types";
 import { API_JIKAN_URL } from "$env/static/private";
+import axios from "axios";
 
 type DataAnime = {
     top: {
@@ -19,10 +20,16 @@ type DataAnime = {
 
 export async function load({ fetch }) {
     try {
-        const response = await fetch(`${env.API_JIKAN_URL}/top/anime?limit=5`);
-        const data = await response.json();
-        // console.log(data);
-        return data
+        // const response = await axios.get(`${API_JIKAN_URL}/top/anime?limit=5`);
+        const response = await axios.get("https://api.jikan.moe/v4/top/anime");
+        const data_anime = await response.data
+        console.log(data_anime);
+        // return data_anime;
+        return {
+            props: {
+                data_anime
+            }
+        }
     } catch (error) {
         console.error(error);
     }
