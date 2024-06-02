@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {},
     screens: {
-      phone: { max: "440px" },
-      tablet: { max: "1100px" },
+      phone: { min: "120px", max: "440px" },
+      tablet: { min: "441px", max: "1100px" },
     },
   },
   daisyui: {

@@ -60,7 +60,7 @@
       >
     </div>
     <article
-      class="grid grid-cols-5 gap-6 m-auto my-10 phone:my-3 tablet:grid-cols-2 phone:grid-cols-1"
+      class="grid grid-cols-5 gap-6 m-auto my-10 phone:grid-cols-1 tablet:grid-cols-2 phone:my-3"
     >
       {#await getAnime() then data_anime}
         {#each data_anime.data as item}
@@ -100,7 +100,7 @@
 
   <section class="p-4 mx-10 phone:m-0 bg-slate-950 rounded-xl">
     <div class="flex justify-between phone:text-md">
-      <span class="text-xl font-semibold phone:text-sm">Top Rank Anime</span>
+      <span class="text-xl font-semibold phone:text-sm">Top Rank Manga</span>
       <a
         href="/pages/top-manga"
         class="text-xl font-semibold phone:text-sm hover:text-decoration hover:font-bold"
@@ -108,7 +108,7 @@
       >
     </div>
     <article
-      class="grid grid-cols-5 gap-6 my-10 tablet:grid-cols-2 phone:grid-cols-1"
+      class="grid grid-cols-5 gap-6 my-10 phone:grid-cols-1 tablet:grid-cols-2"
     >
       {#await getManga() then data_manga}
         {#each data_manga.data as item}

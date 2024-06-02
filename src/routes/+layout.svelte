@@ -3,16 +3,28 @@
 </script>
 
 <body class="w-full min-h-screen">
-  <!-- <nav class="flex justify-between p-5 text-white">
-    <div class="flex flex-row gap-12">
-      <a href="/" class="text-xl">Jiko Anime</a>
-      <div class="flex flex-row gap-10">
-        <a href="/pages/anime" class="text-xl">Anime</a>
-        <a href="/pages/manga" class="text-xl">Manga</a>
-        <a href="/pages/seiyuu" class="text-xl">People and Seiyuu</a>
+  <nav
+    class="flex items-center justify-between p-5 text-white border-b-2 border-cyan-950"
+  >
+    <div class="flex flex-row">
+      <a href="/" class="text-xl phone:text-xs tablet:text-base">Jiko Anime</a>
+      <div class="flex flex-row gap-4">
+        <a href="/pages/anime" class="text-xl phone:text-xs tablet:text-base"
+          >Anime</a
+        >
+        <a href="/pages/manga" class="text-xl phone:text-xs tablet:text-base"
+          >Manga</a
+        >
+        <a href="/pages/seiyuu" class="text-xl phone:text-xs tablet:text-base"
+          >People and Seiyuu</a
+        >
       </div>
     </div>
-    <a target="_blank" href="https://rioxiu.my.id" class="text-xl">About Me</a>
-  </nav> -->
+    <a
+      target="_blank"
+      href="https://rioxiu.my.id"
+      class="text-xl phone:text-xs tablet:text-base">About Me</a
+    >
+  </nav>
   <slot />
 </body>
